@@ -131,60 +131,60 @@ const restaurantsData = [
 
 
 
-const ordersData = [
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f4402d'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f4403e'),
-        items: [{ name: 'Lahamacun', quantity: 2 }],
-        dateTime: new Date(),
-    },
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f44030'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f44046'),
-        items: [{ name: 'Pizza', quantity: 1 }],
-        dateTime: new Date(),
-    },
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f44033'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f4404d'),
-        items: [{ name: 'Sushi', quantity: 1 }],
-        dateTime: new Date(),
-    },
-];
+// const ordersData = [
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f4402d'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f4403e'),
+//         items: [{ name: 'Lahamacun', quantity: 2 }],
+//         dateTime: new Date(),
+//     },
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f44030'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f44046'),
+//         items: [{ name: 'Pizza', quantity: 1 }],
+//         dateTime: new Date(),
+//     },
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f44033'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f4404d'),
+//         items: [{ name: 'Sushi', quantity: 1 }],
+//         dateTime: new Date(),
+//     },
+// ];
 
-const reviewsData = [
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f44033'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f4404d'),
-        rating: 5,
-        comment: 'Comment1',
-    },
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f44030'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f44046'),
-        rating: 4,
-        comment: 'Comment2',
-    },
-    {
-        userId: new ObjectId('65848dcaad9bb7b8a0f4402d'),
-        restaurantId: new ObjectId('65848dcaad9bb7b8a0f4403e'),
-        rating: 3,
-        comment: 'Comment3',
-    }
-];
+// const reviewsData = [
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f44033'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f4404d'),
+//         rating: 5,
+//         comment: 'Comment1',
+//     },
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f44030'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f44046'),
+//         rating: 4,
+//         comment: 'Comment2',
+//     },
+//     {
+//         userId: new ObjectId('65848dcaad9bb7b8a0f4402d'),
+//         restaurantId: new ObjectId('65848dcaad9bb7b8a0f4403e'),
+//         rating: 3,
+//         comment: 'Comment3',
+//     }
+// ];
 
 
 async function seedDatabase() {
     try {
         await User.insertMany(usersData);
         await Restaurant.insertMany(restaurantsData);
-        await Order.insertMany(ordersData);
-        await Review.insertMany(reviewsData);
+        // await Order.insertMany(ordersData);
+        // await Review.insertMany(reviewsData);
         
 
-        console.log('Data successfully added to the database.');
+        console.log('Veri eklendi.');
     } catch (error) {
-        console.error('Error seeding the database:', error);
+        console.error('Hata Mesaji:', error);
     } finally {
         mongoose.disconnect();
     }
